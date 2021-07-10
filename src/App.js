@@ -1,5 +1,6 @@
 import React, {useEffect,useState} from 'react'
-import {NavBar,Products} from './Componets'
+import {NavBar,Products,Cart} from './Componets'
+
 import {commerce} from './lib/commerce';
 
 
@@ -35,7 +36,8 @@ console.log(cart);
     return (
         <div>
             <NavBar totalItems={cart.total_items}/>
-            <Products products={products} onAddtoCart={handleAddToCart}/>
+            {/* <Products products={products} onAddtoCart={handleAddToCart}/> */}
+            <Cart cart={cart}/>
         </div>
     )
 }
