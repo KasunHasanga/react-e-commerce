@@ -4,12 +4,8 @@ import Product from "./Product/Product";
 
 import useStyle from './styles'
 
-const products =[
-    {id:1,name:"shocks",description:"Running Shooese",price :"5$"},
-    {id:2,name:"MacBook",description:" Apple macbook",price :"5$"},
-]
 
-const Products = () => {
+const Products = ({products}) => {
 
   const classes=useStyle();
 
