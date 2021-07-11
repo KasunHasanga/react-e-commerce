@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavBar, Products, Cart } from "./Componets";
+import { NavBar, Products, Cart,Checkout } from "./Componets";
 
 import { commerce } from "./lib/commerce";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
@@ -57,6 +57,9 @@ const App = () => {
             handleRemoveFromCart={handleRemoveFromCart}
             handleEmptyCart={handleEmptyCart}
             />
+          </Route>
+          <Route exact path="/checkout">
+            <Checkout  />
           </Route>
         </Switch>
       </div>
