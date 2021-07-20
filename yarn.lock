@@ -1115,7 +1115,7 @@
   "resolved" "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   "version" "0.2.3"
 
-"@chec/commerce.js@^2.7.2":
+"@chec/commerce.js@^2.3.0-beta1":
   "integrity" "sha512-OPHbxMZDmMyVKgZmudiBA2jcScKdlGwZJCvtZ8S2lwkD5o4u3h2FjLhfX9stogWfYivj+O7ChIa/yzEnAMKRqw=="
   "resolved" "https://registry.npmjs.org/@chec/commerce.js/-/commerce.js-2.7.2.tgz"
   "version" "2.7.2"
