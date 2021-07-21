@@ -8,12 +8,12 @@ import {
   Typography,
 } from "@material-ui/core";
 import { useForm, FormProvider } from "react-hook-form";
-
+import {Link} from 'react-router-dom';
 import { commerce } from "../../lib/commerce";
 
 import FormInput from "./CustomeTextFeild";
 
-const AddressFrom = ({ checkoutToken }) => {
+const AddressFrom = ({ checkoutToken,next }) => {
   const [shippingCountries, setShippingCountries] = useState([]);
   const [shippingCountry, setShippingCountry] = useState("");
   const [shippingSubdivisions, setShippingSubdivisions] = useState([]);
@@ -79,7 +79,7 @@ const AddressFrom = ({ checkoutToken }) => {
         Shipping Address
       </Typography>
       <FormProvider {...methods}>
-        <form onSubmit="">
+        <form onSubmit={methods.handleSubmit((data)=>next({...data,shippingCountry,shippingSubdivision,shippingOption}))}>
           <Grid container spacing={3}>
             <FormInput name="firstName" label="First Name" />
             <FormInput name="lastName" label="Last Name" />
@@ -137,6 +137,11 @@ const AddressFrom = ({ checkoutToken }) => {
               </Select>
             </Grid>
           </Grid>
+                  <br/ >
+                  <div style={{display:'flex',justifyContent:'space-between'}}>
+                    <Button component={Link} to='/cart' variant="outlined"> Back to Cart</Button>
+                    <Button type='submit' variant="contained" color='primary'> Next</Button>
+                  </div>
         </form>
       </FormProvider>
     </>
