@@ -6,7 +6,9 @@ import {loadStripe} from '@stripe/stripe-js';
 
 import Review from './Review'
 
-const PaymentForm = ({checkoutToken}) => {
+const stripePromise =loadStripe('...');
+
+const PaymentForm = ({checkoutToken ,backStep}) => {
   return <>
   
       <Review checkoutToken={checkoutToken}/>
@@ -14,6 +16,23 @@ const PaymentForm = ({checkoutToken}) => {
         <Typography varient="h6" gutterBottom style={{margin:'20px 0'}}>
             Payment Method
         </Typography>
+        <Elements stripe={stripePromise}>
+            <ElementsConsumer>
+                {({elements,stripe})=>(
+                    <form>
+                        <CardElement/>
+                        <br/><br/>
+                        <div style={{display:'flex',justifyContent:'space-between'}}>
+                            <Button varient="outlined" onClick={backStep}> Back</Button>
+                            <Button type="submit" variant="contained" disable={!stripe}>
+                                Pay {checkoutToken.live.subtotal.formatted_with_symbol}
+                            </Button>
+                        </div>
+                        </form>
+                )}
+
+            </ElementsConsumer>
+        </Elements>
   </>;
 };
 
