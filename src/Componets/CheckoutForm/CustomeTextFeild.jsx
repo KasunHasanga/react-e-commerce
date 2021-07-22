@@ -10,6 +10,7 @@ function FormInput({ name, label }) {
     <Grid item xs={12} sm={6}>
       <Controller
         as={TextField}
+        defaultValue=""
         name={name}
         control={control}
         label={label}
