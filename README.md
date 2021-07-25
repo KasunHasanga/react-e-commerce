@@ -1,8 +1,8 @@
 # Fully functional React E-commerce Apllication with using Commerce.js and stripe Payment Gateway
 
-##Before run this Apllication
+## Before run this Apllication
 
-#Add your E-commmece.js public key and Stripe payment gatewaay public key .env file
+# Add your E-commmece.js public key and Stripe payment gatewaay public key .env file as .env.sample file
 
 In the project directory, you can run:
 
